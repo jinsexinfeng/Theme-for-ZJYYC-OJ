@@ -145,7 +145,7 @@ body{
 }
 
 .button.is-small {
-    font-size: 0.86em;
+    font-size: 0.86rem;
 }
 
 
