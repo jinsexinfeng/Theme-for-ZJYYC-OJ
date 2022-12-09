@@ -2,7 +2,7 @@
 // @name         zjyycoj by.jsxf
 // @description  1.修改oj配色
 // @namespace    https://jinsexinfeng.github.io
-// @version      0.3
+// @version      0.4
 // @author       jinsexinfeng.github.io
 // @match        https://nwanna.cn/home
 // @include      *://nwanna.cn/*
@@ -24,15 +24,33 @@ css += `
 a {
     color: var(--ojcolor) ;
 }
-
-.is-primary{
-    background-color: var(--ojcolorb) !important;
-    color: var(--white) !important;
+a.navbar-item{
+    border-radius: 15px;
 }
 
-.is-light{
-    background-color: var(--white) ;
-    color: var(--ojcolorb);
+.button.is-primary:focus,
+.button.is-primary:hover,
+a.navbar-item:focus,
+a.navbar-item:hover{
+    background-color: var(--ojcolor) !important;
+}
+
+.button.is-primary,
+.navbar.is-primary{
+    background-color: var(--ojcolorb);
+    color: var(--white);
+}
+
+
+.button.is-primary.is-light {
+    background-color: rgba(var(--vs-ojcolor),0.08);
+    color: var(--ojcolor);
+}
+
+.button.is-primary.is-light:hover,
+.button.is-primary.is-light:focus {
+    background-color: var(--ojcolor);
+    color: var(--white);
 }
 
 .is-outlined{
@@ -41,8 +59,9 @@ a {
     background-color: var(--white) !important;
 }
 
+.is-outlined:hover,
 .is-outlined:focus{
-    color: var(--ojcolor) !important;
+    color: var(--white) !important;
     border-color: var(--ojcolor) !important;
     background-color: var(--white) !important;
 }
@@ -51,11 +70,6 @@ a {
     color: var(--ojcolor) !important;
 }
 
-a.navbar-item:focus,
-a.navbar-item:hover{
-     background-color: var(--ojcolor) !important;
-     border-radius: 15px;
-}
 .router-link-exact-active{
      border: 2px solid var(--ojcolor) !important;
      border-radius: 8px;
@@ -85,9 +99,9 @@ li:not(.is-active) > a:hover,
     background: var(--ojcolorb) !important;
     color: white !important;
 }
+
 .tooltip-trigger{
    color: var(--ojcolor) !important;
-   background-color: white !important;
 }
 
 .pagination-link.is-current{
@@ -115,6 +129,12 @@ progress::-webkit-progress-value{
     background-color:var(--ojcolorb) !important;
 }
 
+.hljs{
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: normal;
+    font-size: 20px;
+    font-feature-settings: "liga" 0, "calt" 0; line-height: 27px;
+}
 
 .table-wrapper{
     overflow: overlay;
@@ -172,6 +192,15 @@ body{
     padding-left: 3px;
     padding-right: 3px;
 }
+#challenge .problems {
+    position: sticky;
+    top: 30px;
+}
+.columns.is-flex-wrap-wrap {
+    display: flex;
+}
+
+
 `
 if (typeof GM_addStyle !== "undefined") {
   GM_addStyle(css);
