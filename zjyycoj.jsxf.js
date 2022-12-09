@@ -2,7 +2,7 @@
 // @name         zjyycoj by.jsxf
 // @description  1.修改oj配色
 // @namespace    https://jinsexinfeng.github.io
-// @version      0.2
+// @version      0.3
 // @author       jinsexinfeng.github.io
 // @match        https://nwanna.cn/home
 // @include      *://nwanna.cn/*
@@ -64,7 +64,7 @@ a.navbar-item:hover{
 li.is-active > a,
 .tabs > li.is-active > a{
     color: var(--ojcolor) !important;
-    border-bottom-color: var(--ojcolor) !important;
+    border-color: var(--ojcolor) !important;
 }
 
 li:not(.is-active) > a:focus,
@@ -72,10 +72,21 @@ li:not(.is-active) > a:focus,
 li:not(.is-active) > a:hover,
 .b-tabs > .tabs > li:not(.is-active) > a:hover{
     color: var(--ojcolorb) !important;
-    border-bottom-color: var(--ojcolorb) !important;
+    border-color: var(--ojcolorb) !important;
+}
+.b-tooltip.is-right .tooltip-content:before{
+    border-right: 5px solid var(--ojcolorb) !important;
+}
+.b-tooltip.is-top .tooltip-content:before{
+    border-top: 5px solid var(--ojcolorb) !important;
 }
 
+.b-tooltip.is-primary .tooltip-content {
+    background: var(--ojcolorb) !important;
+    color: white !important;
+}
 .tooltip-trigger{
+   color: var(--ojcolor) !important;
    background-color: white !important;
 }
 
@@ -148,7 +159,19 @@ body{
     font-size: 0.86rem;
 }
 
-
+.team-position> .team-users{
+    max-width: max-content !important;
+    margin-left: 20px !important;
+    margin-right: 20px;
+}
+.team-position> .team-users> .is-flex-grow-0{
+    flex-basis: 130px;
+}
+.el-col-4{
+    flex-basis: content;
+    padding-left: 3px;
+    padding-right: 3px;
+}
 `
 if (typeof GM_addStyle !== "undefined") {
   GM_addStyle(css);
