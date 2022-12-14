@@ -2,7 +2,7 @@
 // @name         zjyycoj by.jsxf
 // @description  1.修改oj配色
 // @namespace    https://jinsexinfeng.github.io
-// @version      0.4
+// @version      0.5
 // @author       jinsexinfeng.github.io
 // @match        https://nwanna.cn/home
 // @include      *://nwanna.cn/*
@@ -143,6 +143,9 @@ progress::-webkit-progress-value{
 .table-wrapper::-webkit-scrollbar {
     height: 10px;
 }
+[class*="--default"], [class*="--primary"] {
+    --vs-color: var(--vs-ojcolor);
+}
 
 .vs-switch {
     --vs-color: var(--vs-ojcolor) !important;
@@ -162,9 +165,6 @@ progress::-webkit-progress-value{
     box-shadow: rgb(var(--vs-ojcolor)) 0px 10px 0px 0px, rgb(var(--vs-ojcolor)) 0px 0px 0px 0px !important;
 }
 
-body{
-    overflow-y: visible !important;
-}
 
 .rank>thead>tr>th{
     background-color :rgba(var(--vs-ojcolor),0.08) !important;
@@ -185,22 +185,38 @@ body{
     margin-right: 20px;
 }
 .team-position> .team-users> .is-flex-grow-0{
-    flex-basis: 130px;
-}
-.el-col-4{
-    flex-basis: content;
-    padding-left: 3px;
-    padding-right: 3px;
-}
-#challenge .problems {
-    position: sticky;
-    top: 30px;
-}
-.columns.is-flex-wrap-wrap {
-    display: flex;
+    flex-basis: 160px;
 }
 
 
+.default-theme .splitpanes--vertical>.splitpanes__splitter,
+.default-theme.splitpanes--vertical>.splitpanes__splitter {
+    background: var(--ojcolorb) !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: var(--ojcolorb);
+    color: #fff;
+}
+
+.p-link:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem rgba(var(--vs-ojcolor),0.2);
+}
+
+#judgeStatusBtn .status-1 {
+    background: rgba(var(--vs-ojcolor),0.2) !important;
+    color: var(--ojcolor) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--ojcolorb) !important;
+}
+
+.title.is-3:not(.problem-title) {
+    border-bottom: 3px solid var(--ojcolor) !important;
+}
 `
 if (typeof GM_addStyle !== "undefined") {
   GM_addStyle(css);
