@@ -2,7 +2,7 @@
 // @name         zjyycoj by.jsxf
 // @description  1.修改oj配色
 // @namespace    https://jinsexinfeng.github.io
-// @version      0.5
+// @version      0.6
 // @author       jinsexinfeng.github.io
 // @match        https://nwanna.cn/home
 // @include      *://nwanna.cn/*
@@ -191,7 +191,13 @@ progress::-webkit-progress-value{
 
 .default-theme .splitpanes--vertical>.splitpanes__splitter,
 .default-theme.splitpanes--vertical>.splitpanes__splitter {
+    background: gray !important;
+}
+
+.default-theme .splitpanes--vertical>.splitpanes__splitter:hover,
+.default-theme.splitpanes--vertical>.splitpanes__splitter:hover {
     background: var(--ojcolorb) !important;
+
 }
 
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
@@ -217,6 +223,20 @@ progress::-webkit-progress-value{
 .title.is-3:not(.problem-title) {
     border-bottom: 3px solid var(--ojcolor) !important;
 }
+
+#problem-tab:hover::-webkit-scrollbar {
+    width: 8px !important;
+}
+#problem-tab::-webkit-scrollbar {
+    width: 0px !important;
+}
+#problem-tab:hover{
+   padding-right: 0px;
+}
+#problem-tab{
+   padding-right: 8px;
+}
+
 `
 if (typeof GM_addStyle !== "undefined") {
   GM_addStyle(css);
