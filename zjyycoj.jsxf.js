@@ -192,6 +192,7 @@ progress::-webkit-progress-value{
 .default-theme .splitpanes--vertical>.splitpanes__splitter,
 .default-theme.splitpanes--vertical>.splitpanes__splitter {
     background: gray !important;
+    cursor: e-resize;
 }
 
 .default-theme .splitpanes--vertical>.splitpanes__splitter:hover,
